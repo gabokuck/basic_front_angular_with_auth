@@ -17,7 +17,6 @@ export class AppComponent {
   private router = inject( Router );
 
   public finishedAuthCheck = computed<boolean>( () => {
-    console.log(this.authService.authStatus() )
     if ( this.authService.authStatus() === AuthStatus.cheking ) {
       return false;
     }
@@ -27,8 +26,6 @@ export class AppComponent {
 
 
   public authStatusChangedEffect = effect(() => {
-
-    console.log('auth:', this.authService.authStatus());
     
 
     switch( this.authService.authStatus() ) {
@@ -37,14 +34,10 @@ export class AppComponent {
         return;
 
       case AuthStatus.authenticated:
-        console.log('dashboard');
-        
         this.router.navigateByUrl('/dashboard');
         return;
 
       case AuthStatus.notAuthenticated:
-        console.log('login');
-        
         this.router.navigateByUrl('/auth/login');
         return;
 
