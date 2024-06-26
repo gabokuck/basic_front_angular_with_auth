@@ -1,12 +1,18 @@
-import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+
 import { AuthService } from '../../services/auth.service';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2'
-import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [
+    CommonModule,
+
+    RouterModule,
+    ReactiveFormsModule,],
   providers: [AuthService],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
@@ -14,7 +20,7 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
 
   private fb = inject(FormBuilder);
-  private authService = inject(AuthService);
+  public authService = inject(AuthService);
   private router = inject(Router)
 
   public myForm: FormGroup = this.fb.group({

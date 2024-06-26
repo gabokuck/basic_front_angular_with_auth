@@ -1,10 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { AuthRoutingModule } from './auth-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from "@angular/common";
+import { NgModule, NgZone } from "@angular/core";
+import { AuthRoutingModule } from "./auth-routing.module";
+import { RouterModule } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -14,6 +12,8 @@ import { RouterModule } from '@angular/router';
     AuthRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-  ]
+    
+  ],
+  providers: []
 })
 export class AuthModule { }

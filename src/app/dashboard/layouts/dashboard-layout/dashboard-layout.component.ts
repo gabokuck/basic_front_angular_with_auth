@@ -11,12 +11,14 @@ import { CommonModule } from '@angular/common';
 export class DashboardLayoutComponent {
 
   private authService = inject(AuthService);
-  public user = computed(() => {
-    console.log(this.authService.currentUser());
-    
-    return this.authService.currentUser();
-  });
-  public authStatus = computed(() =>  this.authService.authStatus());
+  // Carga la información del usuario
+  public user = computed(() => this.authService.currentUser());
+  public status = computed(() => this.authService.authStatus());
+
+  // logout del usuario
+  onLogout(){
+    this.authService.logout();
+  }
 
   
 
