@@ -13,7 +13,7 @@ import Swal from 'sweetalert2'
 
     RouterModule,
     ReactiveFormsModule,],
-  providers: [AuthService],
+  providers: [],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })

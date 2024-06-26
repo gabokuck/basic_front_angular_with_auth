@@ -1,1 +1,6 @@
-<router-outlet/>
+
+@if (!finishedAuthCheck()) {
+    <h1>loading</h1>
+} @else {
+    <router-outlet/>
+}
