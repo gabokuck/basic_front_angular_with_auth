@@ -1,5 +1,7 @@
 # Proyecto Front Angular con authentication básica
 
+Proyecto elaborado con Angular, contiene lo básico para la autenticación y poder ocupar en otros proyectos.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
 ## Servidor de desarrollo
